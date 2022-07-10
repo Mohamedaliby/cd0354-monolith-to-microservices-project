@@ -14,8 +14,8 @@ build-push-docker-image-job:
   services:
     - docker:dind
   before_script:
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-    # - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    # - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
   script:
     # feed
     - docker build -t udagram-api-feed ./udagram-api-feed
