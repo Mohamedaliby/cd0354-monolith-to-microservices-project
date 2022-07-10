@@ -1,10 +1,6 @@
 variables:
   DOCKER_PASSWORD: $DOCKER_PASSWORD
   DOCKER_USERNAME: $DOCKER_USERNAME
-  FEED_API: udagram-api-feed
-  USER_API: udagram-api-user
-  FRONTEND: udagram-frontend
-  REVERSE_PROXY: reverseproxy
 
 build-push-docker-image-job:
   # Specify a Docker image to run the job in.
@@ -30,6 +26,6 @@ build-push-docker-image-job:
     - docker tag udagram-frontend abedaliby/udagram-frontend
     - docker push abedaliby/udagram-frontend
     # reverseproxy
-    - docker build -t udagram-reverseproxy ./udagram-reverseproxy
-    - docker tag udagram-reverseproxy abedaliby/udagram-reverseproxy
-    - docker push abedaliby/udagram-reverseproxy
+    - docker build -t reverseproxy ./udagram-reverseproxy
+    - docker tag reverseproxy abedaliby/reverseproxy
+    - docker push abedaliby/reverseproxy
