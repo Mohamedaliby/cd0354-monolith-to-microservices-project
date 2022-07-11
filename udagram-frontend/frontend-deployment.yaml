@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: udagram-frontend
-        image: abedaliby/udagram-frontend
+        image: abedaliby/udagram-frontend:v2
         ports:
         - containerPort: 80
         resources:
